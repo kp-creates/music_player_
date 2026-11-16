@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <!-- Player Frame -->
+        <div class="player-container">
+            <div class="top-bar">
+                <button id="menu-btn" class="action-btn" title="My Playlist">
+                    <!-- Menu SVG -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Spinning Vinyl -->
+            <div class="vinyl-wrapper">
+                <div class="vinyl-record" id="vinyl-record">
+                    <div class="vinyl-grooves"></div>
+                    <img src="leon.jpg" alt="album-art" id="cover">
+                </div>
+            </div>
+
+            <!-- Track Metadata -->
+            <h2 id="title">Push the feeling on slowed</h2>
+            <h3 id="artist">nightcrawlers</h3>
+
+            <audio src="push_the_feeling_on_slowed.mp3" id="audio"></audio>
+
+            <!-- Progress Timeline -->
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+                <div class="duration-wrapper">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <!-- SVG Media Controls -->
+            <div class="controls">
+                <button id="prev" class="action-btn" title="Previous">
+                    <!-- Previous SVG -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                        <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2"></line>
+                    </svg>
+                </button>
+
+                <button id="play" class="action-btn action-btn-big" title="Play">
+                    <!-- Play SVG (Swapped dynamically by JS) -->
+                    <svg id="play-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                </button>
+
+                <button id="next" class="action-btn" title="Next">
+                    <!-- Next SVG -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                        <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sliding Playlist Drawer -->
+        <div class="playlist-drawer" id="playlist-drawer">
+            <div class="drawer-header">
+                <h3>Up Next</h3>
+                <button id="close-drawer" class="action-btn" title="Slide in">
+                    <!-- Close X SVG -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <ul class="song-list" id="song-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
